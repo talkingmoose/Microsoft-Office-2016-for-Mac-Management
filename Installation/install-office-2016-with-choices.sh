@@ -10,11 +10,8 @@ Purpose: Command to install Microsoft Office 2016 for Mac. This allows for silen
 INSTRUCTIONS:
 
 1) Copy the Microsoft_Office_2016_15.x.0_Installer.pkg package to the target computer.
-
 2) Copy a choices plist file to the target computer. (See the accompanying choices.plist file for details.)
-
 3) Modify the line below to include the correct path to the installer package, the correct path to the target disk and the correct path to the choices XML file. As of macOS, targeting the current boot volume should include the full path to the disk name instead of just "/".
-
 4) Run this script or the command from Terminal or any application such as Apple Remote Desktop:
 
 sudo sh /path/to/install-office-2016-with-choices.sh
