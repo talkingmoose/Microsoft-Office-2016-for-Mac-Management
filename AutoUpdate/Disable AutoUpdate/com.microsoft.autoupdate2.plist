@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	
+	<!--
+	Part of Microsoft Office 2016 for Mac Management
+	https://github.com/talkingmoose/Microsoft-Office-2016-for-Mac-Management
+	William Smith, bill@talkingmoose.net
+
+	Purpose: Plist to set the Microsoft AutoUpdate to Manual instead of Automatic
+
+	INSTRUCTIONS:
+
+	1) In your MDM of choice, create a new configuraiton profile with a Custom payload.
+	2) Upload this plist into the Custom payload.
+	3) Ensure the target domain is com.microsoft.autoupdate2.
+	4) Save the configuration profile or download to create a .mobileconfig file.
+	5) Deploy the profile using your MDM or double-click to install the .mobileconfig on the current computer.
+	-->
+	
+	<dict>
+		<key>HowToCheck</key>
+		<string>Manual</string>
+		<key>LastUpdate</key>
+		<string>2001-01-01T00:00:00Z</string>
+	</dict>
+</plist>

@@ -1,0 +1,19 @@
+Microsoft Office 2016 for Mac Management
+bill@talkingmoose.net
+
+
+Purpose
+
+These are a random series of plists for managing Microsoft Office 2016 for Mac. Most application preferences are currently unmanageable because they're now stored in a SQLite database. However, many preferences for managing items outside the Office applications, such as first run windows, Microsoft AutoUpdate, Office 365, etc., are manageable.
+
+
+Support
+
+Unfamiliar with how to create a custom configuration profile in your Mobile Device Management (MDM) solution? I'll eventually set up the wiki with instructions. For now, I encourage you to download the files, use QuickLook or a good plain text editor (not Apple's TextEdit.app) to view the comments, experiment, test and deploy.
+
+
+License
+
+Nothing is copyright.
+
+These scripts may be freely modified for personal or commercial purposes.

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	
+	<!--
+	
+	Use this choices.xml file to disable installing applications (AutoUpdate, Excel, OneNote, Outlook,
+	PowerPoint and Word).
+	
+	INSTRUCTIONS:
+	
+	1) Below are six dictionaries <dict> ... </dict>, one for each application.
+	2) Locate the choice identifier of an application such as 'com.microsoft.autoupdate'.
+	3) Within that same dictionary, set the integer for the attributeSetting key to 0 to prevent
+	   installing that application.
+	   
+	   For example:
+	   
+	   	<dict>
+			<key>attributeSetting</key>
+			<integer>0</integer>							Set this to 0...
+			<key>choiceAttribute</key>
+			<string>selected</string>
+			<key>choiceIdentifier</key>
+			<string>com.microsoft.autoupdate</string>		...to turn off installing AutoUpdate
+		</dict>
+	
+	-->
+	
+	<array>
+		<dict>
+			<key>attributeSetting</key>
+			<integer>1</integer>
+			<key>choiceAttribute</key>
+			<string>selected</string>
+			<key>choiceIdentifier</key>
+			<string>com.microsoft.autoupdate</string>
+		</dict>
+		<dict>
+			<key>attributeSetting</key>
+			<integer>1</integer>
+			<key>choiceAttribute</key>
+			<string>selected</string>
+			<key>choiceIdentifier</key>
+			<string>com.microsoft.excel</string>
+		</dict>
+		<dict>
+			<key>attributeSetting</key>
+			<integer>1</integer>
+			<key>choiceAttribute</key>
+			<string>selected</string>
+			<key>choiceIdentifier</key>
+			<string>com.microsoft.onenote.mac</string>
+		</dict>
+		<dict>
+			<key>attributeSetting</key>
+			<integer>1</integer>
+			<key>choiceAttribute</key>
+			<string>selected</string>
+			<key>choiceIdentifier</key>
+			<string>com.microsoft.outlook</string>
+		</dict>
+		<dict>
+			<key>attributeSetting</key>
+			<integer>1</integer>
+			<key>choiceAttribute</key>
+			<string>selected</string>
+			<key>choiceIdentifier</key>
+			<string>com.microsoft.powerpoint</string>
+		</dict>
+		<dict>
+			<key>attributeSetting</key>
+			<integer>1</integer>
+			<key>choiceAttribute</key>
+			<string>selected</string>
+			<key>choiceIdentifier</key>
+			<string>com.microsoft.word</string>
+		</dict>
+	</array>
+</plist>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	
+	<!--
+	Part of Microsoft Office 2016 for Mac Management
+	https://github.com/talkingmoose/Microsoft-Office-2016-for-Mac-Management
+	William Smith, bill@talkingmoose.net
+
+	Purpose: Plist to redirect clients to an institutionally-owned manifest server to control which updates
+	a client can install.
+
+	INSTRUCTIONS:
+	
+	Part I
+	
+	Configure an HTTP or HTTPS web server on your network. Optionally, enable access to this server from the Internet.
+	Then download the .cat and .xml files for the applications you wish to manage from the URL below. Places these files
+	on your web server.
+	
+	https://www.microsoft.com/mac/autoupdate/
+
+	Excel 2016 for Mac
+	0409XCEL15.cat
+	0409XCEL15.xml
+
+	OneNote 2016 for Mac
+	0409ONMC15.cat
+	0409ONMC15.xml
+
+	Outlook 2016 for Mac
+	0409OPIM15.cat
+	0409OPIM15.xml
+	
+	PowerPoint 2016 for Mac
+	0409PPT315.cat
+	0409PPT315.xml
+
+	Word 2016 for Mac
+	0409MSWD15.cat
+	0409MSWD15.xml
+	
+	Do not edit these files. View the .xml file and verify it contains references to the version of software you want
+	your client computers to access. For example, search for "15.23" to verify this is the version the file references.
+	
+	Part II
+
+	1) Edit the URL in the dictionary below to match your HTTP or HTTPS server address.
+	2) In your MDM of choice, create a new configuraiton profile with a Custom payload.
+	3) Upload this plist into the Custom payload.
+	4) Ensure the target domain is com.microsoft.autoupdate2.
+	5) Save the configuration profile or download to create a .mobileconfig file.
+	6) Deploy the profile using your MDM or double-click to install the .mobileconfig on the current computer.
+	-->
+	
+	<dict>
+		<key>ChannelName</key>
+		<string>Custom</string>
+		<key>ManifestServer</key>
+		<string>https://yourwebserver/yourpath/</string>
+	</dict>
+</plist>
