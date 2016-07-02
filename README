@@ -4,7 +4,7 @@ bill@talkingmoose.net
 
 Purpose
 
-These are a random series of plists for managing Microsoft Office 2016 for Mac. Most application preferences are currently unmanageable because they're now stored in a SQLite database. However, many preferences for managing items outside the Office applications, such as first run windows, Microsoft AutoUpdate, Office 365, etc., are manageable.
+These are a set of scripts and plists for managing Microsoft Office 2016 for Mac. Most application preferences are currently unmanageable because they're now stored in a SQLite database. However, many preferences for managing items outside the Office applications, such as first run windows, Microsoft AutoUpdate, Office 365, etc., are manageable.
 
 
 Support
