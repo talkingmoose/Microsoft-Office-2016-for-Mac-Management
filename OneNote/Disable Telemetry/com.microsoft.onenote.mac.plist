@@ -13,7 +13,7 @@
 
 	1) In your MDM of choice, create a new configuraiton profile with a Custom payload.
 	2) Upload this plist into the Custom payload.
-	3) Ensure the target domain is com.microsoft.Excel.
+	3) Ensure the target domain is com.microsoft.onenote.mac.
 	4) Save the configuration profile or download to create a .mobileconfig file.
 	5) Deploy the profile using your MDM or double-click to install the .mobileconfig on the current computer.
 	-->
