@@ -7,7 +7,7 @@
 	https://github.com/talkingmoose/Microsoft-Office-2016-for-Mac-Management
 	William Smith, bill@talkingmoose.net
 
-	Purpose: Plist to set the Microsoft AutoUpdate to Manual instead of Automatic
+	Purpose: Plist to set a custom channel for Microsoft AutoUpdate clients.
 
 	INSTRUCTIONS:
 
@@ -19,7 +19,9 @@
 	-->
 	
 	<dict>
-		<key>HowToCheck</key>
-		<string>Manual</string>
+		<key>ChannelName</key>
+		<string>Custom</string>
+		<key>ManifestServer</key>
+		<string>https://jss.talkingmoose.net:8443/maucache/collateral/production/</string>
 	</dict>
 </plist>

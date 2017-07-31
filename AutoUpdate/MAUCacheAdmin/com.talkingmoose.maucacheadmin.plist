@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	
+	<!--
+	Part of Microsoft Office 2016 for Mac Management
+	https://github.com/talkingmoose/Microsoft-Office-2016-for-Mac-Management
+	William Smith, bill@talkingmoose.net
+
+	Purpose: Launchd launch daemon to call MAUCacheAdmin to check for updates every four hours.
+	         Uses a locally installed Jamf JSS (not required) as the HTTPS server to serve the
+	         updates to MAU clients.
+
+	Note:    This launchd daemon was created using Lingon by Peter Borg.
+			 https://www.peterborgapps.com/lingon/
+
+	INSTRUCTIONS:
+
+	1) Download MAUCacheAdmin: https://github.com/pbowden-msft/MAUCacheAdmin.
+	2) Place the MAUCacheAdmin script on an HTTP/S server and ensure it is executable.
+	3) Create a download folder such as 'maucache' for the collateral files and packages.
+	4) Update the path in the plist below with the path to 'maucache'.
+	5) Install this plist file in /Library/LauchDaemons.
+	6) Restart the server or run 'sudo launchctl load -w /Library/LaunchDaemons/com.talkingmoose.maucacheadmin.plist'
+	   to start the daemon.
+	-->
+	
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin</string>
+	</dict>
+	<key>Label</key>
+	<string>com.talkingmoose.maucacheadmin</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/Shared/MAUCacheAdmin</string>
+		<string>--CachePath:/Library/JSS/Tomcat/webapps/ROOT/maucache</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StartInterval</key>
+	<integer>14400</integer>
+</dict>
+</plist>

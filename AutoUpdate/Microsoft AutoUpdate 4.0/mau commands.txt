@@ -1,0 +1,81 @@
+#!/bin/sh
+
+Part of Microsoft Office 2016 for Mac Management
+https://github.com/talkingmoose/Microsoft-Office-2016-for-Mac-Management
+William Smith, bill@talkingmoose.net
+
+Purpose: Lists mau commands coming in Microsoft AutoUpdate 4.0.
+
+Notes:   As of July 2017, Microsoft AutoUpdate 4.0 was still in development and not yet released to production.
+         ETA for release was not yet announced. Monitor the #mau4 channel on the MadAdmins Slack team for updates.
+         
+         Also, mau uses a Privileged Helper Tool to elevate its privileges. None of its commands require sudo.
+
+INSTRUCTIONS:
+
+The mau binary in Microsoft AutoUpdate 4.0 lives in the 'Microsoft AutoUpdate.app' bundle.
+
+To return usage information without effectinging any change, simply call mau in Terminal:
+
+
+	$ '/Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app/Contents/MacOS/mau'
+	usage: mau <action> <options>
+	Available actions are:
+		status: Show AutoUpdate status on the machine. Shows mau version, settings, and registered applications.
+		list: Check for updates to installed Microsoft software.
+		update: Check for and install updates to installed Microsoft software.
+			[-y | --yes]: Automatic yes for prompts
+			[-c | --close]: Close running apps
+		register: Register the given application with AutoUpdate so it can receive updates.
+			<path>: The full path of a Microsoft application (i.e. /Applications/Microsoft Word.app)
+
+
+To return status information from mau, run './mau status':
+
+
+	$ '/Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app/Contents/MacOS/mau' status
+	Microsoft AutoUpdate version 4.0.16091600
+
+	Last check for updates:
+		Dec 29, 1, 6:09:24 PM
+	How to check:
+		Automatic
+	Update channel:
+		Production
+	Launching daemon on app launch:
+		yes
+	Registered apps: 
+		/Applications/Microsoft PowerPoint.app
+		/Applications/Microsoft Word.app
+		/Applications/Microsoft OneNote.app
+		/Applications/Microsoft Outlook.app
+		/Applications/Microsoft Excel.app
+
+
+To list available updates, run './mau list':
+
+
+	$ '/Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app/Contents/MacOS/mau' list
+	Checking for updates...
+	5 updates found:
+		OneNote Update 15.36.0 (17070200)
+		Word Update 15.36.0 (17070200)
+		Excel Update 15.36.0 (17070200)
+		PowerPoint Update 15.36.0 (17070200)
+		Outlook Update 15.36.1 (17072101)
+
+
+Apps register themselves at first launch but mau won't see updates for apps that have never launched and registered themselves.
+To register an Office 2016 app (such as Microsoft Excel) with mau, run "./mau register '/Applications/Microsoft Excel.app'":
+
+
+	$ '/Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app/Contents/MacOS/mau' register '/Applications/Microsoft Excel.app'
+	Registered application at /Applications/Microsoft Excel.app with Microsoft AutoUpdate.
+
+
+To quit running Office 2016 apps and silently update, run './mau update --yes --close':
+
+
+	$ '/Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app/Contents/MacOS/mau' update --yes --close
+	
+	[ This feature is still in development. ]

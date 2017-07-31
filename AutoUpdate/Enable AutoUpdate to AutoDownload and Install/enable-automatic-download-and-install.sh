@@ -13,9 +13,9 @@ INSTRUCTIONS:
 
 1) Run this script or command from Terminal or any application such as Apple Remote Desktop:
 
-sudo sh /path/to/disable-autoupdate.sh
+sudo sh /path/to/enable-automatic-download-and-install.sh
 '
 
-defaults write "/Library/Preferences/com.microsoft.autoupdate2.plist" HowToCheck -string Manual
+defaults write "/Library/Preferences/com.microsoft.autoupdate2.plist" HowToCheck -string AutomaticDownload
 
 exit 0

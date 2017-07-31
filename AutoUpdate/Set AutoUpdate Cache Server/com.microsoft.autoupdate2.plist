@@ -7,7 +7,7 @@
 	https://github.com/talkingmoose/Microsoft-Office-2016-for-Mac-Management
 	William Smith, bill@talkingmoose.net
 
-	Purpose: Plist to set the Microsoft AutoUpdate to Manual instead of Automatic
+	Purpose: Plist to set the Microsoft AutoUpdate client to a custom MAUCacheAdmin server.
 
 	INSTRUCTIONS:
 
@@ -19,7 +19,7 @@
 	-->
 	
 	<dict>
-		<key>HowToCheck</key>
-		<string>Manual</string>
+		<key>UpdateCache</key>
+		<string>https://jss.talkingmoose.net:8443/maucache</string>
 	</dict>
 </plist>

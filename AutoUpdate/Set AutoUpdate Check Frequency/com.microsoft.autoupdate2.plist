@@ -7,7 +7,11 @@
 	https://github.com/talkingmoose/Microsoft-Office-2016-for-Mac-Management
 	William Smith, bill@talkingmoose.net
 
-	Purpose: Plist to set the Microsoft AutoUpdate to Manual instead of Automatic
+	Purpose: Plist to set how often Microsoft AutoUpdate checks for updates.
+	         Integer below is in minutes.
+	         Default is 720 minutes or every 12 hours
+	         240 minutes = every 4 hours
+	         10,080 minutes = Once per week
 
 	INSTRUCTIONS:
 
@@ -19,7 +23,7 @@
 	-->
 	
 	<dict>
-		<key>HowToCheck</key>
-		<string>Manual</string>
+		<key>UpdateCheckFrequency</key>
+		<integer>240</integer>
 	</dict>
 </plist>

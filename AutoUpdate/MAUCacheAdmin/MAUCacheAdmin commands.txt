@@ -1,0 +1,108 @@
+#!/bin/sh
+
+Part of Microsoft Office 2016 for Mac Management
+https://github.com/talkingmoose/Microsoft-Office-2016-for-Mac-Management
+William Smith, bill@talkingmoose.net
+
+Purpose: Some sample MAUCacheAdmin commands.
+         https://github.com/pbowden-msft/MAUCacheAdmin
+
+INSTRUCTIONS:
+
+To return usage information without affecting any change, simply call MAUCacheAdmin in Terminal:
+
+
+	$ ./MAUCacheAdmin
+	Microsoft AutoUpdate Cache Admin - 1.6
+	Purpose: Downloads MAU collateral and packages from the Office CDN to a local web server
+	Usage: MAUCacheAdmin --CachePath:<path> [--CheckInterval:<minutes>] [--HTTPOnly] [--NoPackages] [--NoCollateral]
+		[--ShowCollateral] [--CopyCollateralFrom:<from Folder>] [--CopyCollateralTo:<to Folder>] [--InsiderSupport]
+	Example: MAUCacheAdmin --CachePath:/Volumes/web/MAU/cache --CheckInterval:60
+	Example: MAUCacheAdmin --CachePath:/Volumes/web/MAU/cache --ShowCollateral
+	Example: MAUCacheAdmin --CachePath:/Volumes/web/MAU/cache --CopyCollateralFrom:15.27.16101000 --CopyCollateralTo:Production
+	
+
+To view available updates without effecting any change, run './MAUCacheAdmin --CachePath:/path/to/folder --ShowCollateral':
+
+	$ ./MAUCacheAdmin --CachePath:/Users/Shared/maucache/ --ShowCollateral
+	----------------------------------------------------------------------------------------
+	App ID         Application                                Build Date  [Folder]
+	----------------------------------------------------------------------------------------
+	0409MSWD15     Word Update 15.36.0 (17070200)             2017-07-02  [15.36.17070200]
+	0409ONMC15     OneNote Update 15.36.0 (17070200)          2017-07-02  [15.36.17070200]
+	0409PPT315     PowerPoint Update 15.36.0 (17070200)       2017-07-02  [15.36.17070200]
+	0409XCEL15     Excel Update 15.36.0 (17070200)            2017-07-02  [15.36.17070200]
+	0409OPIM15     Outlook Update 15.36.1 (17072101)          2017-07-21  [15.36.17072101]
+	0409MSFB16     Skype For Business Update 16.8.196         2017-06-15  [16.8.196]
+	0409MSAU03     AutoUpdate 3.9.1 (17070200)                2017-07-02  [3.9.17070200]
+	0409MSOF14     Office 2011 14.7.6 Update                  2017-07-11  [Legacy]
+	0409SUIT15                                                            [Legacy]
+	0409UCCP14     Lync 14.4.3 Update                         2017-03-14  [Legacy]
+	----------------------------------------------------------------------------------------
+	
+
+To download current Production updates, run './MAUCacheAdmin --CachePath:/path/to/folder':
+
+
+	./MAUCacheAdmin --CachePath:/Users/Shared/maucache/
+	######################################################################## 100.0%
+	Downloading collateral file: https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/0409MSAU03
+
+	[1/2]: https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/0409MSAU03.xml --> 0409MSAU03.xml
+	--_curl_--https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/0409MSAU03.xml
+	######################################################################## 100.0%
+
+	...
+
+
+	stat: Microsoft_Word_15.36.17070200_Updater.pkg: stat: No such file or directory
+	===================================================
+	Application: Word 2016
+	Package: Microsoft_Word_15.36.17070200_Updater.pkg
+	Size: 1050 MB
+	URL: https://officecdn-microsoft-com.akamaized.net/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Word_15.36.17070200_Updater.pkg
+	######                                                                     9.4%
+	
+	...
+	
+
+To download current Production and Insider Support updates, run './MAUCacheAdmin --CachePath:/path/to/folder --InsiderSupport':
+
+
+	$ ./MAUCacheAdmin --CachePath:/Users/Shared/maucache/ --InsiderSupport
+	######################################################################## 100.0%
+	Downloading collateral file: https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/0409MSAU03
+
+	[1/2]: https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/0409MSAU03.xml --> 0409MSAU03.xml
+	--_curl_--https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/0409MSAU03.xml
+	######################################################################## 100.0%
+
+	...
+
+
+	stat: Microsoft_Word_15.36.17070200_Updater.pkg: stat: No such file or directory
+	===================================================
+	Application: Word 2016
+	Package: Microsoft_Word_15.36.17070200_Updater.pkg
+	Size: 1050 MB
+	URL: https://officecdn-microsoft-com.akamaized.net/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Word_15.36.17070200_Updater.pkg
+	######                                                                     9.4%
+	
+	...
+	
+
+To download collateral files only, run './MAUCacheAdmin --CachePath:/path/to/folder --NoPackages':
+
+	$ ./MAUCacheAdmin --CachePath:/Users/Shared/maucache/ --NoPackages
+	######################################################################## 100.0%
+	Downloading collateral file: https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/0409MSAU03
+
+	[1/2]: https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/0409MSAU03.xml --> 0409MSAU03.xml
+	--_curl_--https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/0409MSAU03.xml
+	######################################################################## 100.0%
+
+	[2/2]: https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/0409MSAU03.cat --> 0409MSAU03.cat
+	--_curl_--https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/0409MSAU03.cat
+	######################################################################## 100.0%
+	
+	...

@@ -20,6 +20,6 @@
 	
 	<dict>
 		<key>HowToCheck</key>
-		<string>Manual</string>
+		<string>AutomaticDownload</string>
 	</dict>
 </plist>
