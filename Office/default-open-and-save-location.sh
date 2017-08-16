@@ -34,7 +34,7 @@ do
 	aHome=$( echo "$aLine" | awk '{print $2}' )
 	if [[ -d "$aHome" ]] ; then
 		defaults write "$aHome/Library/Group Containers/UBF8T346G9.Office/com.microsoft.officeprefs.plist" DefaultsToLocalOpenSave -bool TRUE
-		chown "$aUser" "$aHome/Library/Group Containers/UBF8T346G9.Office/com.microsoft.officeprefs.plist"
+		chown "$aUser" "$aHome/Library/Group Containers/UBF8T346G9.Office"
 	fi
 done <<< "$homeslist"
 
