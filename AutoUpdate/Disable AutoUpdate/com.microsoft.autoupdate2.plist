@@ -11,7 +11,7 @@
 
 	INSTRUCTIONS:
 
-	1) In your MDM of choice, create a new configuraiton profile with a Custom payload.
+	1) In your MDM of choice, create a new configuration profile with a Custom payload.
 	2) Upload this plist into the Custom payload.
 	3) Ensure the target domain is com.microsoft.autoupdate2.
 	4) Save the configuration profile or download to create a .mobileconfig file.
